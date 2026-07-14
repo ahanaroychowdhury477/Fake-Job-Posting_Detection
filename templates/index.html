@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Detector AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="main">
+
+    <div class="sidebar">
+
+        <h2>🛡 AI Detector</h2>
+
+        <div class="card">
+            <h3>Model</h3>
+            <p>Logistic Regression</p>
+        </div>
+
+        <div class="card">
+            <h3>Vectorizer</h3>
+            <p>TF-IDF</p>
+        </div>
+
+        <div class="card">
+            <h3>Accuracy</h3>
+            <p>96.7%</p>
+        </div>
+
+    </div>
+
+
+    <div class="content">
+
+        <div class="glass">
+
+            <h1>Fake Job Posting Detection</h1>
+
+            <p class="subtitle">
+                Detect fraudulent job advertisements using Artificial Intelligence.
+            </p>
+
+            <form id="predictForm"
+                  enctype="multipart/form-data">
+
+                <label>Upload PDF / TXT</label>
+
+                <input type="file"
+                       name="file"
+                       accept=".pdf,.txt">
+
+                <label>Job Description</label>
+
+                <textarea
+                        name="job"
+                        rows="10"
+                        placeholder="Paste complete job description here..."></textarea>
+
+                <div class="buttons">
+
+                    <button type="reset">
+                        🗑 Clear
+                    </button>
+
+                    <button type="submit">
+                        🔍 Predict
+                    </button>
+
+                </div>
+
+            </form>
+            <div id="loading" class="loading" style="display:none;">
+    <div class="spinner"></div>
+    <p>Analyzing Job Posting...</p>
+</div>
+
+            <div id="result"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
